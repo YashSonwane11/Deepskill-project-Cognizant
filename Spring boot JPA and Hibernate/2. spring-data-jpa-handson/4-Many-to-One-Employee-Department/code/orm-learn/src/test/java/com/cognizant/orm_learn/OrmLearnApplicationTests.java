@@ -30,8 +30,7 @@ class OrmLearnApplicationTests {
 
 	@Test
 	void shouldLoadEmployee() {
-
-		Employee employee = employeeService.getEmployee(1);
+		Employee employee = employeeService.get(1);
 
 		assertThat(employee).isNotNull();
 		assertThat(employee.getName()).isNotBlank();
@@ -39,8 +38,7 @@ class OrmLearnApplicationTests {
 
 	@Test
 	void shouldLoadDepartment() {
-
-		Department department = departmentService.getDepartment(1);
+		Department department = departmentService.get(1);
 
 		assertThat(department).isNotNull();
 		assertThat(department.getName()).isNotBlank();
@@ -48,8 +46,7 @@ class OrmLearnApplicationTests {
 
 	@Test
 	void shouldLoadSkill() {
-
-		Skill skill = skillService.getSkill(1);
+		Skill skill = skillService.get(1);
 
 		assertThat(skill).isNotNull();
 		assertThat(skill.getName()).isNotBlank();
@@ -57,16 +54,14 @@ class OrmLearnApplicationTests {
 
 	@Test
 	void shouldLoadEmployeeDepartmentRelationship() {
-
-		Employee employee = employeeService.getEmployee(1);
+		Employee employee = employeeService.get(1);
 
 		assertThat(employee.getDepartment()).isNotNull();
 	}
 
 	@Test
 	void shouldLoadEmployeeSkillsRelationship() {
-
-		Employee employee = employeeService.getEmployee(1);
+		Employee employee = employeeService.get(1);
 
 		assertThat(employee.getSkillList()).isNotEmpty();
 	}

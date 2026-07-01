@@ -1,62 +1,67 @@
 package com.cognizant.orm_learn;
 
-import com.cognizant.orm_learn.model.Stock;
-import com.cognizant.orm_learn.service.StockService;
+import com.cognizant.orm_learn.model.Department;
+import com.cognizant.orm_learn.model.Employee;
+import com.cognizant.orm_learn.model.Skill;
+import com.cognizant.orm_learn.service.DepartmentService;
+import com.cognizant.orm_learn.service.EmployeeService;
+import com.cognizant.orm_learn.service.SkillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.util.List;
-
 @SpringBootApplication
 public class OrmLearnApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(OrmLearnApplication.class);
 
-	private static StockService stockService;
+	private static EmployeeService employeeService;
+	private static DepartmentService departmentService;
+	private static SkillService skillService;
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(OrmLearnApplication.class, args);
 
-		stockService = context.getBean(StockService.class);
+		employeeService = context.getBean(EmployeeService.class);
+		departmentService = context.getBean(DepartmentService.class);
+		skillService = context.getBean(SkillService.class);
 
-		testFacebookSeptemberStocks();
-		testGoogleStocksAbove1250();
-		testTop3HighestVolume();
-		testNetflixLowestClose();
+		testGetEmployee();
+		testGetDepartment();
+		testGetSkill();
 	}
 
-	private static void testFacebookSeptemberStocks() {
-		LOGGER.info("Facebook Stocks - September 2019");
+	private static void testGetEmployee() {
+		LOGGER.info("Start Employee");
 
-		List<Stock> stocks = stockService.getFacebookSeptemberStocks();
+		Employee employee = employeeService.getEmployee(1);
 
-		stocks.forEach(stock -> LOGGER.debug("{}", stock));
+		LOGGER.debug("Employee: {}", employee);
+		LOGGER.debug("Department: {}", employee.getDepartment());
+		LOGGER.debug("Skills: {}", employee.getSkillList());
+
+		LOGGER.info("End Employee");
 	}
 
-	private static void testGoogleStocksAbove1250() {
-		LOGGER.info("Google Stocks Close > 1250");
+	private static void testGetDepartment() {
+		LOGGER.info("Start Department");
 
-		List<Stock> stocks = stockService.getGoogleStocksAbove1250();
+		Department department = departmentService.getDepartment(1);
 
-		stocks.forEach(stock -> LOGGER.debug("{}", stock));
+		LOGGER.debug("Department: {}", department);
+
+		LOGGER.info("End Department");
 	}
 
-	private static void testTop3HighestVolume() {
-		LOGGER.info("Top 3 Highest Volume");
+	private static void testGetSkill() {
+		LOGGER.info("Start Skill");
 
-		List<Stock> stocks = stockService.getTop3HighestVolume();
+		Skill skill = skillService.getSkill(1);
 
-		stocks.forEach(stock -> LOGGER.debug("{}", stock));
-	}
+		LOGGER.debug("Skill: {}", skill);
 
-	private static void testNetflixLowestClose() {
-		LOGGER.info("Netflix Lowest 3 Close Price");
-
-		List<Stock> stocks = stockService.getNetflixLowest3Close();
-
-		stocks.forEach(stock -> LOGGER.debug("{}", stock));
+		LOGGER.info("End Skill");
 	}
 }
