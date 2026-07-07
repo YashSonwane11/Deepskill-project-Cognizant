@@ -1,9 +1,10 @@
-package com.example.employeemanagementsystem.controller;
+package com.example.EmployeeManagementSystem.controller;
 
-import com.example.employeemanagementsystem.model.Department;
-import com.example.employeemanagementsystem.model.Employee;
-import com.example.employeemanagementsystem.repository.DepartmentRepository;
-import com.example.employeemanagementsystem.repository.EmployeeRepository;
+import com.example.EmployeeManagementSystem.model.Department;
+import com.example.EmployeeManagementSystem.model.Employee;
+import com.example.EmployeeManagementSystem.projection.EmployeeSummaryProjection;
+import com.example.EmployeeManagementSystem.repository.DepartmentRepository;
+import com.example.EmployeeManagementSystem.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,11 @@ public class EmployeeController {
     @GetMapping
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    @GetMapping("/summary")
+    public List<EmployeeSummaryProjection> getEmployeeSummaries() {
+        return employeeRepository.findAllProjectedBy();
     }
 
     @GetMapping("/{id}")

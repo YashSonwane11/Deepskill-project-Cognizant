@@ -1,8 +1,14 @@
-package com.example.employeemanagementsystem.model;
+package com.example.EmployeeManagementSystem.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "employees")
@@ -10,11 +16,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@NamedQuery(
-        name = "Employee.findEmployeeByEmailNamed",
-        query = "SELECT e FROM Employee e WHERE e.email = :email"
-)
+@DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
 public class Employee {
 
     @Id
@@ -26,8 +29,15 @@ public class Employee {
     @Column(unique = true, nullable = false)
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "department_id")
-    @JsonIgnoreProperties({"employees", "hibernateLazyInitializer", "handler"})
+    @JsonIgnoreProperties({"employees"})
     private Department department;
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 }
