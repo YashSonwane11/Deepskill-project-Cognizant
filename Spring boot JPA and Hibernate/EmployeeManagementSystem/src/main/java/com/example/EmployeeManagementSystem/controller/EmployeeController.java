@@ -46,6 +46,39 @@ public class EmployeeController {
         return employeeRepository.findAllProjectedBy();
     }
 
+    @GetMapping("/projection/basic/department/{departmentId}")
+    public List<?> getBasicProjectionByDepartment(@PathVariable Long departmentId) {
+        return employeeRepository.findProjectedByDepartmentId(departmentId);
+    }
+
+    @GetMapping("/projection/summary/department/{departmentId}")
+    public List<?> getSummaryProjectionByDepartment(@PathVariable Long departmentId) {
+        return employeeRepository.findSummaryProjectedByDepartmentId(departmentId);
+    }
+
+    @GetMapping("/projection/dto")
+    public List<?> getEmployeeDepartmentDTOs() {
+        return employeeRepository.findEmployeeDepartmentDTOs();
+    }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<?> createEmployeesBulk(@RequestBody List<Employee> employees) {
+
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == null || employee.getDepartment().getId() == null) {
+                return ResponseEntity.badRequest().body("Department id is required for all employees");
+            }
+
+            Department department = departmentRepository.findById(employee.getDepartment().getId())
+                    .orElseThrow(() -> new RuntimeException("Department not found"));
+
+            employee.setDepartment(department);
+        }
+
+        List<Employee> savedEmployees = employeeRepository.saveAll(employees);
+        return ResponseEntity.ok(savedEmployees);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
         return employeeRepository.findById(id)
