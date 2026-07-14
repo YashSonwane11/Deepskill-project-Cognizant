@@ -1,0 +1,23 @@
+<div class="home-container">
+  <div class="welcome-section">
+    <h2>Welcome to Student Course Portal</h2>
+    <p>Manage your courses, track your progress, and excel in your studies with our comprehensive learning platform.</p>
+  </div>
+
+  <div class="stats-grid">
+    <app-course-summary-widget 
+      title="Courses Available" 
+      [value]="(courses$ | async)?.length || 0">
+    </app-course-summary-widget>
+
+    <app-course-summary-widget 
+      title="Enrolled Courses" 
+      [value]="(enrolledCourseIds$ | async)?.length || 0">
+    </app-course-summary-widget>
+
+    <app-course-summary-widget 
+      title="GPA" 
+      value="3.8">
+    </app-course-summary-widget>
+  </div>
+</div>

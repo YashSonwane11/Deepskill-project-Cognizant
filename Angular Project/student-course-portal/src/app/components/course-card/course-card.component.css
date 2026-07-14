@@ -1,0 +1,26 @@
+.course-card {
+  transition: transform 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.enroll-btn {
+  width: 100%;
+  margin-top: 10px;
+}

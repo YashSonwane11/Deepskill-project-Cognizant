@@ -1,0 +1,10 @@
+<div class="card course-card" appHighlight="var(--warning-color)">
+  <h3>{{ course.name }} ({{ course.code }})</h3>
+  <p class="credits">{{ course.credits | creditLabel }}</p>
+  <div class="status" [ngSwitch]="course.gradeStatus">
+    <span *ngSwitchCase="'passed'" [ngClass]="'badge success'" [ngStyle]="{'background-color': 'var(--success-color)'}">Passed</span>
+    <span *ngSwitchCase="'failed'" [ngClass]="'badge danger'" [ngStyle]="{'background-color': 'var(--danger-color)'}">Failed</span>
+    <span *ngSwitchDefault [ngClass]="'badge warning'" [ngStyle]="{'background-color': 'var(--warning-color)', 'color': 'black'}">Pending</span>
+  </div>
+  <button class="primary enroll-btn" (click)="onEnroll()">Enroll</button>
+</div>

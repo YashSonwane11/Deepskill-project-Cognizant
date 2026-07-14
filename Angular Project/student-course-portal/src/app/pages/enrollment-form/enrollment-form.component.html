@@ -1,0 +1,47 @@
+<div class="card form-container">
+  <h2>Template Driven Enrollment Form</h2>
+  <form #enrollForm="ngForm" (ngSubmit)="onSubmit(enrollForm)">
+    
+    <div class="form-group">
+      <label>Student Name:</label>
+      <input type="text" name="studentName" [(ngModel)]="model.studentName" required minlength="3" #nameCtrl="ngModel">
+      <div *ngIf="nameCtrl.invalid && (nameCtrl.dirty || nameCtrl.touched)" class="error">
+        <span *ngIf="nameCtrl.errors?.['required']">Name is required.</span>
+        <span *ngIf="nameCtrl.errors?.['minlength']">Name must be at least 3 characters.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" name="studentEmail" [(ngModel)]="model.studentEmail" required email #emailCtrl="ngModel">
+      <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)" class="error">
+        <span *ngIf="emailCtrl.errors?.['required']">Email is required.</span>
+        <span *ngIf="emailCtrl.errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Course ID:</label>
+      <input type="number" name="courseId" [(ngModel)]="model.courseId" required #courseCtrl="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Semester:</label>
+      <select name="preferredSemester" [(ngModel)]="model.preferredSemester" required>
+        <option value="fall">Fall</option>
+        <option value="spring">Spring</option>
+        <option value="summer">Summer</option>
+      </select>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <input type="checkbox" name="agreeToTerms" [(ngModel)]="model.agreeToTerms" required #termsCtrl="ngModel">
+      <label>I agree to terms and conditions</label>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="primary" [disabled]="enrollForm.invalid">Submit</button>
+      <button type="button" (click)="onReset(enrollForm)">Reset</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,34 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Introduction to Angular",
+      "code": "ANG101",
+      "credits": 3,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": 2,
+      "name": "Advanced TypeScript",
+      "code": "TS201",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": 3,
+      "name": "RxJS Patterns",
+      "code": "RX301",
+      "credits": 2,
+      "gradeStatus": "failed"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "enrolledCourseIds": [1, 2]
+    }
+  ],
+  "enrollments": []
+}

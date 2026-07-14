@@ -1,0 +1,14 @@
+<div class="card">
+  <h2>Student Profile</h2>
+  <div class="profile-info">
+    <p><strong>Name:</strong> {{ studentName }}</p>
+    <p><strong>Email:</strong> {{ studentEmail }}</p>
+  </div>
+  <h3>Enrolled Course IDs:</h3>
+  <ul *ngIf="(enrolledCourseIds$ | async)?.length; else noCourses">
+    <li *ngFor="let id of enrolledCourseIds$ | async">{{ id }}</li>
+  </ul>
+  <ng-template #noCourses>
+    <p>Not enrolled in any courses yet.</p>
+  </ng-template>
+</div>

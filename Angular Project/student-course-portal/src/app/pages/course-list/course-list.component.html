@@ -1,0 +1,31 @@
+<div class="course-list-container">
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      (ngModelChange)="onSearchChange()" 
+      placeholder="Search courses..."
+      class="search-input"
+    >
+  </div>
+
+  <div *ngIf="loading$ | async; else content" class="loading-state">
+    <p>Loading courses...</p>
+  </div>
+
+  <ng-template #content>
+    <div class="course-grid" *ngIf="(courses$ | async)?.length; else noData">
+      <app-course-card 
+        *ngFor="let course of courses$ | async" 
+        [course]="course"
+        (enrollEvent)="onEnroll($event)">
+      </app-course-card>
+    </div>
+  </ng-template>
+
+  <ng-template #noData>
+    <div class="no-data">
+      <p>No courses found.</p>
+    </div>
+  </ng-template>
+</div>

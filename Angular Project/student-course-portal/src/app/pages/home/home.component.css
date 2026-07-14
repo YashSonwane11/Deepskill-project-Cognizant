@@ -1,0 +1,26 @@
+.home-container {
+  padding: 20px 0;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-section h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.welcome-section p {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}

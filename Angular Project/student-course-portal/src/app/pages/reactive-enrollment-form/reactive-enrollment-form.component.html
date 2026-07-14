@@ -1,0 +1,46 @@
+<div class="card form-container">
+  <h2>Reactive Enrollment Form</h2>
+  <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label>Student Name:</label>
+      <input type="text" formControlName="studentName">
+      <div *ngIf="enrollForm.get('studentName')?.invalid && (enrollForm.get('studentName')?.dirty || enrollForm.get('studentName')?.touched)" class="error">
+        <span *ngIf="enrollForm.get('studentName')?.errors?.['required']">Name is required.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" formControlName="studentEmail">
+      <div *ngIf="enrollForm.get('studentEmail')?.invalid && (enrollForm.get('studentEmail')?.dirty || enrollForm.get('studentEmail')?.touched)" class="error">
+        <span *ngIf="enrollForm.get('studentEmail')?.errors?.['required']">Email is required.</span>
+        <span *ngIf="enrollForm.get('studentEmail')?.errors?.['email']">Invalid email format.</span>
+        <span *ngIf="enrollForm.get('studentEmail')?.errors?.['emailTaken']">Email is taken (test&#64; is rejected).</span>
+      </div>
+      <div *ngIf="enrollForm.get('studentEmail')?.pending" class="info">Checking email availability...</div>
+    </div>
+
+    <div class="form-group">
+      <label>Course Code (No 'XX'):</label>
+      <input type="text" formControlName="courseCode">
+      <div *ngIf="enrollForm.get('courseCode')?.invalid && (enrollForm.get('courseCode')?.dirty || enrollForm.get('courseCode')?.touched)" class="error">
+        <span *ngIf="enrollForm.get('courseCode')?.errors?.['required']">Course Code is required.</span>
+        <span *ngIf="enrollForm.get('courseCode')?.errors?.['noCourseCode']">Cannot start with XX.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Additional Courses</label>
+      <button type="button" (click)="addCourse()">Add Course</button>
+      <div formArrayName="additionalCourses" *ngFor="let course of additionalCourses.controls; let i=index" style="margin-top: 10px;">
+        <input type="text" [formControlName]="i" placeholder="Additional Course Code">
+        <button type="button" class="danger" (click)="removeCourse(i)">Remove</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="primary" [disabled]="enrollForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>
