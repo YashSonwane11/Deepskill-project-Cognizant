@@ -246,26 +246,41 @@ export interface Course {
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Before downloading or running this project, make sure you have the following installed on your system:
 
+- [Git](https://git-scm.com/) for cloning the repository
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [npm](https://www.npmjs.com/) (v9 or higher)
 - [Angular CLI](https://angular.io/cli) (v18)
 
-### Installation
+You can verify your setup with:
+
+```bash
+node -v
+npm -v
+ng version
+```
+
+If Angular CLI is not installed, run:
+
+```bash
+npm install -g @angular/cli@18
+```
+
+### Download the Project
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/student-course-portal.git
+git clone https://github.com/YashSonwane11/Deepskill-project-Cognizant.git
 
-# 2. Navigate into the project directory
-cd student-course-portal
+# 2. Navigate into the project folder
+cd "Deepskill-project-Cognizant/Angular Project/student-course-portal"
 
 # 3. Install all dependencies
 npm install
 ```
 
-### Running the App
+### Run the Project
 
 You need to run **two servers simultaneously** in separate terminals:
 
@@ -279,6 +294,14 @@ npm run serve:api
 ```bash
 npm start
 # App runs at: http://localhost:4200
+```
+
+### Useful Commands
+
+```bash
+npm run build      # Build the app for production
+npm test           # Run unit tests
+npm run watch      # Watch mode for development builds
 ```
 
 ---
