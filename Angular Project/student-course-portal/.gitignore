@@ -1,0 +1,25 @@
+
+.angular/cache
+
+# dependencies
+node_modules/
+
+# Angular cache
+.angular/
+
+# build
+dist/
+
+# coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
