@@ -70,21 +70,32 @@ Deepskill-project-Cognizant
 ---
 
 # ✅ Week 1 – Engineering Concepts
+## Design Patterns & Principles
+- SOLID Principles (SRP, OCP, LSP, ISP, DIP)
+- Design Patterns Overview
+- Creational Design Patterns
+- Structural Design Patterns
+- Behavioral Design Patterns
+- MVC Architecture
+- Dependency Injection (DI)
 
-Topics Covered
-
-- SDLC
-- Software Development Models
-- Agile Methodology
-- Scrum
-- DevOps Fundamentals
-- Software Engineering Principles
-- Version Control
-- Git
-- GitHub
-- Coding Standards
-- Best Practices
-
+## Data Structures & Algorithms (DSA)
+- Algorithm Analysis
+- Time Complexity
+- Space Complexity
+- Big O Notation
+- Arrays
+- Linked Lists
+- Searching Algorithms
+  - Linear Search
+  - Binary Search
+- Sorting Algorithms
+  - Bubble Sort
+  - Insertion Sort
+  - Heap Sort
+  - Quick Sort
+  - Merge Sort
+ 
 ---
 
 # ☕ Spring Core & Maven
@@ -498,8 +509,8 @@ After completing this repository, I gained practical experience in
 | Spring Boot JPA | ✅ Completed |
 | Oracle SQL & PLSQL | ✅ Completed |
 | JUnit & Mockito | ✅ Completed |
-| Microservices | 🚧 In Progress |
-| Angular | 🚧 In Progress |
+| Microservices | ✅ Completed |
+| Angular |  ✅ Completed |
 
 ---
 
