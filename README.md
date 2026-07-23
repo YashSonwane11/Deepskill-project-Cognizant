@@ -348,6 +348,56 @@ Hands-on Projects
 - API Integration with Spring Boot
 
 ---
+# 🌿 Git & GitHub (Version Control)
+
+## Topics Covered
+
+- Introduction to Git
+- Version Control System (VCS)
+- Git Installation & Configuration
+- Git Repository Initialization
+- Local Repository Management
+- Git Status
+- Staging Area
+- Git Add
+- Git Commit
+- Commit History
+- Git Log
+- Creating and Managing Branches
+- Switching Branches
+- Branch Comparison
+- Merging Branches
+- Merge Conflict Resolution
+- Git Diff
+- Branch Deletion
+- Git Ignore (.gitignore)
+- Remote Repository
+- GitHub Repository Creation
+- Connecting Local Repository to GitHub
+- Git Remote
+- Git Push
+- Git Pull
+- Repository Synchronization
+- Working Tree
+- Git Workflow Best Practices
+
+## Hands-on Projects
+
+- Git Repository Creation
+- Git Configuration
+- Initial Commit
+- Git Ignore Implementation
+- Branch Creation & Management
+- Branch Comparison
+- Merge Operations
+- Merge Conflict Resolution
+- Remote Repository Configuration
+- Push Local Repository to GitHub
+- Pull Latest Changes from GitHub
+- Git Status Verification
+- Complete Git Hands-on Lab Assignment
+
+---
 
 # 💻 Technologies Used
 
@@ -511,6 +561,7 @@ After completing this repository, I gained practical experience in
 | JUnit & Mockito | ✅ Completed |
 | Microservices | ✅ Completed |
 | Angular |  ✅ Completed |
+| Git And GitLab |  ✅ Completed |
 
 ---
 
