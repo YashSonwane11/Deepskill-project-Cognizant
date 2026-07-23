@@ -9,8 +9,9 @@
   <img src="https://img.shields.io/badge/Oracle-SQL-blue?style=for-the-badge&logo=oracle" />
   <img src="https://img.shields.io/badge/JUnit-5-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Mockito-Framework-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Git-Version%20Control-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" />
 </p>
-
 ---
 
 # 📖 About
