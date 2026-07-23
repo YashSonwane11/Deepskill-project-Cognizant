@@ -61,6 +61,8 @@ Deepskill-project-Cognizant
 │
 ├── 📁 Angular
 │
+├── 📁 Git Lab Assignment
+│
 └── README.md
 ```
 
