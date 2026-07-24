@@ -102,7 +102,62 @@ Deepskill-project-Cognizant
   - Merge Sort
  
 ---
+# 🛢 Week 2 – Oracle SQL & PL/SQL
 
+Topics Covered
+
+- SQL Basics
+- DDL
+- DML
+- DCL
+- TCL
+- Constraints
+- Joins
+- Aggregate Functions
+- Views
+- Indexes
+- Sequences
+- Stored Procedures
+- Functions
+- Packages
+- Triggers
+- Cursors
+- Exception Handling
+
+Hands-on
+
+- SQL Queries
+- Stored Procedures
+- Functions
+- Trigger Programs
+- Cursor Programs
+- Package Implementation
+
+---
+
+# ✅ Week 3 – JUnit & Mockito
+
+Topics Covered
+
+- Unit Testing
+- JUnit 5
+- Assertions
+- Test Lifecycle
+- Parameterized Tests
+- Mockito
+- Mock Objects
+- Stubbing
+- Verification
+- Dependency Mocking
+
+Hands-on
+
+- Service Layer Testing
+- Repository Testing
+- Mocking Dependencies
+- Test Coverage
+
+---
 # ☕ Spring Core & Maven
 
 Topics Covered
@@ -197,64 +252,7 @@ Hands-on
 - Projections
 - Relationships
 - CRUD Operations
-
----
-
-# 🛢 Week 2 – Oracle SQL & PL/SQL
-
-Topics Covered
-
-- SQL Basics
-- DDL
-- DML
-- DCL
-- TCL
-- Constraints
-- Joins
-- Aggregate Functions
-- Views
-- Indexes
-- Sequences
-- Stored Procedures
-- Functions
-- Packages
-- Triggers
-- Cursors
-- Exception Handling
-
-Hands-on
-
-- SQL Queries
-- Stored Procedures
-- Functions
-- Trigger Programs
-- Cursor Programs
-- Package Implementation
-
----
-
-# ✅ Week 3 – JUnit & Mockito
-
-Topics Covered
-
-- Unit Testing
-- JUnit 5
-- Assertions
-- Test Lifecycle
-- Parameterized Tests
-- Mockito
-- Mock Objects
-- Stubbing
-- Verification
-- Dependency Mocking
-
-Hands-on
-
-- Service Layer Testing
-- Repository Testing
-- Mocking Dependencies
-- Test Coverage
-
+  
 ---
 
 # ☁️ Microservices using Spring Boot & Spring Cloud
