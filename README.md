@@ -12,10 +12,12 @@
   <img src="https://img.shields.io/badge/Git-Version%20Control-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" />
 </p>
+
+# Name : Yashkumar Sonwane 
+# Mail ID :yashsonwane438@gmail.com
+# Superset ID: 7795993
 ---
-
 # 📖 About
-
 This repository contains all the assignments, hands-on exercises, mini projects, and practical implementations completed during the **Cognizant Digital Nurture 5.0 Java Full Stack Engineer (FSE) Program**.
 
 The program is designed to build industry-ready Full Stack Java Developers through intensive training in Java, Spring Framework, Spring Boot, Hibernate, REST APIs, SQL, Microservices, Angular, Unit Testing, and Enterprise Development.
